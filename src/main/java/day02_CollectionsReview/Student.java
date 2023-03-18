@@ -1,4 +1,4 @@
-package day02_ArrayList;
+package day02_CollectionsReview;
 
 import java.util.Objects;
 

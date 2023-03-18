@@ -1,6 +1,9 @@
 package DS_Tasks;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TwoSum {
 
@@ -8,11 +11,13 @@ public class TwoSum {
 
         int[] arr = new int[]{4, 7, 2, 11};
 
-        System.out.println(Arrays.toString(twoSumSolution1(arr, 9)));
+        System.out.println(Arrays.toString(twoSumSolution_Brute(arr, 9)));
+
+        System.out.println(Arrays.toString(twoSumSolution_Optimal(arr, 9)));
     }
 
-    // Brute force:
-    public static int[] twoSumSolution1(int[] arr, int target) {
+// Brute force - O(n^2)
+    public static int[] twoSumSolution_Brute(int[] arr, int target) {
 
         for (int i = 0; i < arr.length; i++) {
             for (int j = 1; j < arr.length; j++) {
@@ -20,8 +25,25 @@ public class TwoSum {
                     if (arr[i] + arr[j] == target) {
                         return new int[]{i, j};
                     }
-                }
+                }   // O(n^2)
+            }
+        }
+        return new int[]{};
+    }
 
+// Optimal (HashMap) - O(n) (space complexity = O(n) )
+    public static int[] twoSumSolution_Optimal(int[] arr, int target) {
+// Create HashMap
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < arr.length; i++) {
+
+            int potentialMatch = target - arr[i];
+
+            if (map.containsKey(potentialMatch)) {
+                return new int[] {map.get(potentialMatch), i};
+            }else {
+                map.put(arr[i], i);
             }
         }
         return new int[]{};
