@@ -2,8 +2,8 @@ package day03_LinkedList;
 
 public class Node {
 
-    int id;
-    Node next;
+    public int id;
+    public Node next;
 //  creating an Object Instance of Node class:
 //  next - default value is null
 
