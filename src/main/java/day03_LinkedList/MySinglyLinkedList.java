@@ -2,15 +2,15 @@ package day03_LinkedList;
 
 public class MySinglyLinkedList {
 
-    Node head;
-    Node tail;
+    public Node head;
+    public Node tail;
     int size;
 
     boolean isEmpty() {
         return head == null;
     }
 
-    void add(int data) {
+    public void add(int data) {
         // create a new Node Object from data
         Node node = new Node(data);
 
