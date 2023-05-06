@@ -18,7 +18,7 @@ public class Reverse1stK_ElementsFromQueue {
     public static void main(String[] args) {
 
         MyQueue<Integer> queue = new MyQueue<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 6; i++) {
             queue.enqueue(i);
         }
 
@@ -26,7 +26,7 @@ public class Reverse1stK_ElementsFromQueue {
         queue.printQueue();
         System.out.println();
         System.out.println("After 1st K elements reversed: ");
-        reverseFirstK_Elements(queue, 4).printQueue();
+        reverseFirstK_Elements(queue, 4).printQueue();  // [3, 2, 1, 0, 4, 5]
     }
 
 
@@ -46,10 +46,9 @@ public class Reverse1stK_ElementsFromQueue {
     // remove REMAINING elements from HEAD (front) of queue and place
     // them in the end so that your original K elements which were
     // reversed are back it the beginning of the queue
-        for (int i = 0; i < queue.size - K; i++) {
+        for (int i = 0; i < queue.size - K; i++) {  // loop for N(size) - K times
             queue.enqueue(queue.dequeue());
         }
-
         return queue;
     }
 
