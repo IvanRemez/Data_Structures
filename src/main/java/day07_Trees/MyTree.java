@@ -5,29 +5,31 @@ import java.util.Queue;
 
 public class MyTree {
 
-    TNode root;
+    public TNode root;
 
     public MyTree() {
     }
 
-    void insert(int value) {
+    public void insert(int value) {
 
         TNode newNode = new TNode(value);
-
+    // Tree is empty:
         if (root == null) {
             root = newNode;
             return;
         }
+    // Tree NOT empty -> find place (null) to insert new Node
         TNode current = root;
 
-        while (true) {                              // will loop until insertion of newNode
+        while (true) {             // will loop until insertion of newNode
             if (value <= current.value) {
+        // ^^ LESS THAN current Node -> branch LEFT
                 if (current.leftChild == null) {
                 // if left is null -> insert here
                     current.leftChild = newNode;
                     break;      // exit loop after insertion
                 }
-                // if left is NOT null -> branch left
+            // if left is NOT null -> go 1 level deeper and repeat while loop
                 current = current.leftChild;
             } else {
                 if (current.rightChild == null) {
@@ -35,14 +37,14 @@ public class MyTree {
                     current.rightChild = newNode;
                     break;      // exit loop after insertion
                 }
-                // if right is NOT null -> branch right
+            // if right is NOT null -> go 1 level deeper and repeat while loop
                 current = current.rightChild;
             }
         }
     }
 
     // Pre-Order: Root - Left - Right
-    void preOrderTraversal(TNode root) {
+    public void preOrderTraversal(TNode root) {
 
         if (root == null) {     // base condition - termination
             return;
@@ -53,7 +55,7 @@ public class MyTree {
     }
 
     // In-Order: Left - Root - Right
-    void inOrderTraversal(TNode root) {     // Ascending Order **
+    public void inOrderTraversal(TNode root) {     // Ascending Order **
 
         if (root == null) {     // base condition - termination
             return;
@@ -64,7 +66,7 @@ public class MyTree {
     }
 
     // Post-Order: Left - Right - Root
-    void postOrderTraversal(TNode root) {
+    public void postOrderTraversal(TNode root) {
 
         if (root == null) {     // base condition - termination
             return;
@@ -75,7 +77,7 @@ public class MyTree {
 
     }
     // Level-Order
-    void levelOrderTraversal(TNode root) {
+    public void levelOrderTraversal(TNode root) {
 
         if (root == null) {
             return;
@@ -93,6 +95,5 @@ public class MyTree {
                 queue.add(toVisit.rightChild);
             }
         }
-
     }
 }
