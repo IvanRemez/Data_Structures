@@ -5,11 +5,47 @@ import java.util.NoSuchElementException;
 public class MyHeap {
 
     int[] items;
-    int size;
+    int size;   // why not just use items.length?
+    // b/c length of array isn't changing but # of items (non-null indices) is
+    // size = filled (non-null) indices
 
     public MyHeap(int capacity) {
         this.items = new int[capacity];
         this.size = 0;
+    }
+
+    public MyHeap(int[] arr) {
+        this.items = new int[arr.length];
+        this.size = arr.length;
+        this.items = arr;
+        buildHeap();
+    }
+
+    public int peek() {
+        if (size == 0) throw new NoSuchElementException();
+        return items[0];
+    }
+
+    // Heapify new array:
+    public void buildHeap() {
+    // start at index = n/2 - 1 to exclude the leaves
+        int startIndex = (size/2) - 1;
+    // level order traversal going up to the root (index = 0)
+        for (int i = startIndex; i >= 0; i--) {
+
+            heapify(i);
+        }
+    }
+
+    public void heapify(int index) {
+    // check if index element is a valid parent
+        if (!isValidParent(index)) {
+        // ^^  continue until the index element is in valid place
+            int largerChildIndex = largerChildIndex(index);
+            swap(index, largerChildIndex);
+        // recursively go down on the affected subtree
+            heapify(largerChildIndex);
+        }
     }
 
     public void insert(int value) {

@@ -20,5 +20,14 @@ public class HeapApp {
 
         heap.insert(130);
         heap.printHeap();
+
+        int[] numbers = {1, 2, 5, 6, 8, 21, 0};
+        int[] numbers2 = {5, 8, 6, 8, 8, 2, 1, 5, 7, 6, 7, 4};
+        MyHeap heap2 = new MyHeap(numbers);
+        MyHeap heap3 = new MyHeap(numbers2);
+        System.out.println("Printing heapified array");
+        heap2.printHeap();
+        heap3.printHeap();
+
     }
 }
