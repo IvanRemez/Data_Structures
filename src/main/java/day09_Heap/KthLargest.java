@@ -7,14 +7,19 @@ public class KthLargest {
     }
 
     public static int getKthLargest(int[] array, int k) {
-        // create a heap
+
+    // Create a Heap
         MyHeap heap = new MyHeap(array.length);
+
+    // Put array into Heap
         for (int i = 0; i < array.length; i++) {
             heap.insert(array[i]);
         }
+    // Remove root k-1 timesf
         for (int i = 0; i < k - 1; i++) {
             heap.remove();
         }
+    // Return root
         return heap.peek();
     }
 }
