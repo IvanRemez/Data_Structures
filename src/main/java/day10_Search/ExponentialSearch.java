@@ -24,13 +24,15 @@ public class ExponentialSearch {
         int bound = 1;
 
         while (bound < arr.length && arr[bound] < data) {
-    // ^^ while bound within arr AND it's element < data, expand bound (*2)
+    // ^^ while bound within arr AND it's value < data, expand bound (*2)
             bound *= 2;
         }
         int left = bound / 2;
         int right = Math.min(bound, arr.length - 1);
     // ^^ rightBound = min of bound OR arr.length - 1 to avoid IndexOutOfBounds
 
+    // once the correct bound (partition) is found,
+        // perform recursive Binary Search inside that bound:
         return BinarySearch.binarySearch_Recursive(arr, data, left, right);
     }
 }

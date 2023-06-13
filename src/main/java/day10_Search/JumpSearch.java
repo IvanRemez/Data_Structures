@@ -31,11 +31,13 @@ public class JumpSearch {
             // if so, jump to next block:
             start = next;
             next += blockSize;
+
         // in case of uneven blockSizes, to avoid IndexOutOfBounds exception:
             if (next > arr.length) {
                 next = arr.length;
             }
         }
+        // Linear search within current block:
         for (int i = start; i < next; i++) {
 
             if (arr[i] == data) {

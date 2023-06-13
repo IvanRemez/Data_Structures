@@ -49,7 +49,7 @@ public class BinarySearch {
                 left = middle + 1;
             }
         }
-        return -1;
+        return -1;  // element NOT FOUND
     }
 
     public static int binarySearch_Recursive(int[] arr, int data) {
