@@ -14,12 +14,16 @@ public class BinarySearch {
         System.out.println(binarySearch_Iterative(nums, 6));
         System.out.println(binarySearch_Iterative(nums, 0));
         System.out.println(binarySearch_Iterative(nums, 9));
+        System.out.println(binarySearch_Iterative(nums, 11));
+        System.out.println(binarySearch_Iterative(nums, -1));
 
         System.out.println("----------------------------------------");
         System.out.println("binarySearch_Recursive:");
         System.out.println(binarySearch_Recursive(nums, 6));
         System.out.println(binarySearch_Recursive(nums, 0));
         System.out.println(binarySearch_Recursive(nums, 9));
+        System.out.println(binarySearch_Iterative(nums, 11));
+        System.out.println(binarySearch_Iterative(nums, -1));
 
     }
 

@@ -14,11 +14,15 @@ public class TernarySearch {
         System.out.println(ternarySearch_Iterative(nums, 6));
         System.out.println(ternarySearch_Iterative(nums, 0));
         System.out.println(ternarySearch_Iterative(nums, 9));
+        System.out.println(ternarySearch_Iterative(nums, 11));
+        System.out.println(ternarySearch_Iterative(nums, -1));
 
         System.out.println("ternarySearch_Recursive:");
         System.out.println(ternarySearch_Recursive(nums, 6, 0, nums.length - 1));
         System.out.println(ternarySearch_Recursive(nums, 0, 0, nums.length - 1));
         System.out.println(ternarySearch_Recursive(nums, 9, 0, nums.length - 1));
+        System.out.println(ternarySearch_Recursive(nums, 11, 0, nums.length - 1));
+        System.out.println(ternarySearch_Recursive(nums, -1, 0, nums.length - 1));
 
     }
 
