@@ -8,6 +8,7 @@ public class QuickSort {
             return;
         }
         int boundary = partition(arr, start, end);
+        // ^^ boundary = Final position of the Pivot
 
         quickSort(arr, start, boundary - 1); // recursive on left
         quickSort(arr, boundary + 1, end);  // recursive on right
@@ -20,7 +21,7 @@ public class QuickSort {
 
         for (int i = start; i <= end; i++) {
 
-            if (arr[i] <= pivot) {   // if element smaller than pivot, swap indices w/ boundary
+            if (arr[i] <= pivot) {   // if element smaller than pivot, swap
                 swap(arr, i, boundary);
                 boundary++; // move boundary (index) right to the next element
             }

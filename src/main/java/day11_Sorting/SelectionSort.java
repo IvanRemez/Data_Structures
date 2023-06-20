@@ -14,7 +14,7 @@ public class SelectionSort {
                 if (arr[j] < arr[minIndex]) {
                     minIndex = j;
                 // if any element in UNSORTED part is smaller than minIndex element,
-                    // store new minIndex
+                    // reassign new minIndex
                 }
             }
             swap(arr, minIndex, i); // swap actual elements using new minIndex

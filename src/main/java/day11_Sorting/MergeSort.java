@@ -13,10 +13,10 @@ public class MergeSort {
         int[] left = new int[mid];
         int[] right = new int[arr.length - mid];
     // assign elements to each side:
-        for (int i = 0; i < mid; i++) {
+        for (int i = 0; i < mid; i++) {     // space complex. ++
             left[i] = arr[i];
         }
-        for (int i = mid; i < arr.length; i++) {
+        for (int i = mid; i < arr.length; i++) {    // space complex. ++
             right[i - mid] = arr[i];
         }// ^^ since we start from mid and right arr needs to start from 0,
         // we use (i - mid) to avoid OutOfBoundsException
@@ -33,7 +33,7 @@ public class MergeSort {
         int i = 0, j = 0, k = 0;
 
         while (i < left.length && j < right.length) {
-    // while left AND right indices are within array bounds
+    // while left AND right Arrays are NOT empty
 
             if (left[i] < right[j]) {
                 result[k++] = left[i++];

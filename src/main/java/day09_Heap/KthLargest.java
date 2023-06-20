@@ -15,7 +15,7 @@ public class KthLargest {
         for (int i = 0; i < array.length; i++) {
             heap.insert(array[i]);
         }
-    // Remove root k-1 timesf
+    // Remove root k-1 times
         for (int i = 0; i < k - 1; i++) {
             heap.remove();
         }
